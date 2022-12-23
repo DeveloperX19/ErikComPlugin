@@ -1,0 +1,119 @@
+name: ErikComPlugin
+version: '${project.version}'
+main: de.developerx19.erikcomplugin.ErikComPlugin
+api-version: 1.19
+authors: [ Bobua ]
+description: Plugin für Eriks Community Server
+
+commands:
+  cast:
+    usage: "/<command> <enchantment> <level>"
+    description: Enchants (or disenchants) the item in your main hand, ignoring all limitations
+    aliases: cenchant
+  subperk:
+    usage: "/<command> <subperk type> ..."
+    description: Gives you a subperk item
+  vanish:
+    usage: "/<command>"
+    description: Makes you invisible to the common folks
+    aliases: v
+  ghost:
+    usage: "/<command>"
+    description: Switches you between spectator and survival mode
+    aliases: shadow
+  god:
+    usage: "/<command>"
+    description: Switches you between creative and survival mode
+  heal:
+    usage: "/<command> [player]"
+    description: Heals and saturates the player
+  warp:
+    usage: "/<command> [player | location] ..."
+    description: Teleports you to another player or location
+  back:
+    usage: "/<command> [here]"
+    description: Quickly teleport back to a pre-saved location
+  grouptag:
+    usage: "/<command> [create | modify | delete | add | remove | info | list] [group name] [priority] [display color] [display name]"
+    description: Manages the custom groups tags and members
+    aliases: [group, gt]
+  pvp:
+    usage: "/<command> [on | off] [player]"
+    description: Toggles your status between 'Friendly' and 'PVP'
+  tell:
+    usage: "/<command> [player] [message]"
+    description: Sends a message to another player in a private chat
+    aliases: [whisper, w, message, msg]
+  staff:
+    usage: "/<command> [add | remove] [player]"
+    description: Manages the staff team members
+  streamermode:
+    usage: "/<command>"
+    description: Gives you the [LIVE] tag and disables private chats, commands and pings
+    aliases: live
+  signitem:
+    usage: "/<command> [remove|enchant]"
+    description: Signs (or removes the sign from) the item in your main hand
+  op:
+    usage: "/<command> [player]"
+    description: Gives a player operator rights
+  deop:
+    usage: "/<command> [player]"
+    description: Revokes a players operator rights
+  devtool:
+    description: Various commands for developers
+    aliases: dt
+  player_stat:
+    usage: "/<command> [statistic] [player]"
+    description: Display or alter statistics of players
+    aliases: pstat
+  countdown_event:
+    usage: "/<command> [seconds] [event name]"
+    description: Start a countdown for all players
+  present_pool:
+    usage: "/<command> [on|off]"
+
+
+permissions:
+  devx.*:
+    description: grants every permission for the ErikComPlugin
+    children:
+      devx.vanish: true
+      devx.teaminfo: true
+      devx.creative: true
+      devx.subperk: true
+      devx.teleport: true
+      devx.tags: true
+      devx.pvp: true
+      devx.chat: true
+      devx.staff: true
+      devx.streamer: true
+      devx.signitem: true
+      devx.player_stats: true
+      devx.countdown: true
+  devx.vanish:
+    description: grants permission for the commands /vanish and /ghost
+  devx.teaminfo:
+    description: grants acces to varios player statistics & information
+  devx.creative:
+    description: grants permission for the commands /god /heal and /cast
+  devx.subperk:
+    description: grants permission for the /subperk command
+  devx.teleport:
+    description: grants permission for the commands /warp and /back
+  devx.tags:
+    description: grants permission for the /grouptag command
+  devx.pvp:
+    description: grants permission for the /pvp command
+  devx.chat:
+    description: grants permission for the /whisper command
+  devx.staff:
+    description: grants permission for the /staff command
+  devx.streamer:
+    description: grants permission for the /streamermode command
+  devx.signitem:
+    description: grants permission for the /signitem command
+  devx.player_stats:
+    description: grants permission for the /player_stat command
+  devx.countdown:
+    description: grants permission for the /countdown_event command
